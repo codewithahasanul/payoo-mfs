@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payoo mfs practice</title>
+    <!-- Tailwind CSS (new CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- DaisyUI (compatible with Tailwind v4) -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <header>
+        <div class="navbar bg-base-100 shadow-sm px-10">
+            <div class="navbar-start">
+                <div class="dropdown">
+                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h8m-8 6h16" />
+                        </svg>
+                    </div>
+                    <ul tabindex="-1"
+                        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                        <li><button class="btn btn-secondary">Add Money</button></li>
+                        <li><button class="btn btn-accent">Cash Out</button></li>
+                        <li><button class="btn btn-warning">Transaction History</button></li>
+                    </ul>
+                </div>
+                <a class="btn btn-primary text-xl">DaisyUI</a>
+            </div>
+            <div class="navbar-end hidden lg:flex">
+                <ul class="menu menu-horizontal px-1 gap-4">
+                    <li><button id="show-addmoney-form" class="btn btn-secondary">Add Money</button></li>
+                    <li><button id="show-cashout-form" class="btn btn-accent">Cash Out</button></li>
+                    <li><button id="show-transaction-history" class="btn btn-warning">Transaction History</button></li>
+                </ul>
+            </div>
+            <div class="navbar-end">
+                <!-- main balance section  -->
+                <div class="stats shadow">
+                    <div class="stat text-center bg-slate-500">
+                        <div class="stat-title text-2xl font-bold text-white">Main Balance</div>
+                        <div id="main-balance" class="stat-value">10000</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+
+
+        <!-- money transaction section  -->
+        <div class="hero bg-base-200 min-h-screen">
+            <div class="hero-content flex lg:flex mx-10">
+
+                <!-- add money section  -->
+                <div id="addmoney-form" class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+                    <div class="card-body">
+                        <fieldset class="fieldset">
+                            <label class="label">Add Money</label>
+                            <input id="input-addmoney" type="text" class="input" placeholder="Add your money" />
+                            <label class="label">Add Pin</label>
+                            <input id="input-addmoney-pin" type="text" class="input" placeholder="Add your pin" />
+                            <button id="input-btn-addmoney" class="btn btn-secondary">Add Money</button>
+                        </fieldset>
+                    </div>
+                </div>
+
+                <!-- cashout section  -->
+                <div id="cashout-form" class="hidden card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+                    <div class="card-body">
+                        <fieldset class="fieldset">
+                            <label class="label">Cash Out</label>
+                            <input id="input-cashout" type="text" class="input" placeholder="Add your money" />
+                            <label class="label">Add Pin</label>
+                            <input id="input-cashout-pin" type="text" class="input" placeholder="Add your pin" />
+                            <button id="input-btn-cashout" class="btn btn-accent">Cash Out</button>
+                        </fieldset>
+                    </div>
+                </div>
+
+                <!-- transaction history section -->
+                <div id="transaction-history"
+                    class="hidden card text-black bg-base-300 w-full max-w-sm shrink-0 shadow-2xl">
+                    <h1 class="font-bold text-4xl p-4">Transaction History</h1>
+                    <div id="transaction-container" class="space-y-3">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer></footer>
+
+    <!-- js file  -->
+    <script src="payoo-mfs-practice/addMoney.js"></script>
+    <script src="payoo-mfs-practice/cashOut.js"></script>
+    <script src="payoo-mfs-practice/library.js"></script>
+    <script src="payoo-mfs-practice/features.js"></script>
+
+</body>
+
+</html>
